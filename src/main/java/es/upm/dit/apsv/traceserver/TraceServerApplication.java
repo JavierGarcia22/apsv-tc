@@ -36,8 +36,8 @@ public class TraceServerApplication {
 		log.info("Prueba consumer arrancando...");
 	}
 
-    @Bean("consumer")
-    public Consumer<Trace> checkTrace() {
+        @Bean("consumer")
+        public Consumer<Trace> checkTrace() {
             return t -> {
                     t.setTraceId(t.getTruck() + t.getLastSeen());
                     tr.save(t);
